@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d18">
+  <title>CADENZZA UNITY3D CONVERTER</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <h1>CADENZZA</h1>
+    <span>UNITY3D CONVERTER</span>
+    <div id="system-status">SYSTEM READY</div>
+  </header>
+
+  <main class="container">
+
+    <section class="panel">
+      <h2>01 / ASSET ANALYSIS</h2>
+      <p>Upload Unity AssetBundle or ZIP archive.</p>
+
+      <input
+        type="file"
+        id="asset-file"
+        accept=".zip,.unity3d,.bundle"
+      >
+
+      <div id="file-info">
+        No file selected
+      </div>
+
+      <button id="analyze-btn">
+        ANALYZE ASSET
+      </button>
+    </section>
+
+    <section class="panel">
+      <h2>02 / CONVERSION WORKFLOW</h2>
+
+      <label for="source-platform">
+        SOURCE PLATFORM
+      </label>
+
+      <select id="source-platform">
+        <option value="android">Android</option>
+      </select>
+
+      <label for="target-platform">
+        TARGET PLATFORM
+      </label>
+
+      <select id="target-platform">
+        <option value="ios">iOS</option>
+      </select>
+
+      <label for="texture-format">
+        TEXTURE FORMAT
+      </label>
+
+      <select id="texture-format">
+        <option value="auto">ASTC AUTO</option>
+        <option value="4x4">ASTC 4x4</option>
+        <option value="6x6">ASTC 6x6</option>
+        <option value="8x8">ASTC 8x8</option>
+        <option value="12x12">ASTC 12x12</option>
+      </select>
+
+      <button id="convert-btn">
+        START WORKFLOW
+      </button>
+    </section>
+
+    <section class="panel">
+      <h2>03 / ENGINE STATUS</h2>
+      <div id="engine-status">
+        Backend: NOT CONNECTED
+      </div>
+      <div id="conversion-status">
+        Conversion: NOT STARTED
+      </div>
+      <div id="result">
+        Waiting for analysis...
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    CADENZZA ENGINE<br>
+    Asset Inspection & Conversion Interface
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
